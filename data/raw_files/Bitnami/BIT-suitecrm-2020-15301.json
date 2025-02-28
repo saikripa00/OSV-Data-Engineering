@@ -1,0 +1,53 @@
+{
+  "id": "BIT-suitecrm-2020-15301",
+  "details": "SuiteCRM through 7.11.13 allows CSV Injection via registration fields in the Accounts, Contacts, Opportunities, and Leads modules. These fields are mishandled during a Download Import File Template operation.",
+  "aliases": [
+    "CVE-2020-15301"
+  ],
+  "modified": "2025-01-17T15:26:01.971Z",
+  "published": "2024-03-06T11:11:15.356Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:salesagility:suitecrm:*:*:*:*:*:*:*:*"
+    ],
+    "severity": "High"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://www.wizlynxgroup.com/security-research-advisories/vuln/WLX-2020-010"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "suitecrm",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/suitecrm"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "7.11.13"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/suitecrm/BIT-suitecrm-2020-15301.json"
+      },
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "BIT-gitlab-2020-26407",
+  "details": "A XSS vulnerability exists in Gitlab CE/EE from 12.4 before 13.4.7, 13.5 before 13.5.5, and 13.6 before 13.6.2 that allows an attacker to perform cross-site scripting to other users via importing a malicious project",
+  "aliases": [
+    "CVE-2020-26407"
+  ],
+  "modified": "2024-11-27T19:40:48.342Z",
+  "published": "2024-03-06T11:21:19.612Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:gitlab:gitlab:*:*:*:*:community:*:*:*",
+      "cpe:2.3:a:gitlab:gitlab:*:*:*:*:enterprise:*:*:*",
+      "cpe:2.3:a:gitlab:gitlab:*:*:*:*:*:*:*:*",
+      "cpe:2.3:a:gitlab:gitlab:12.4:*:*:*:*:*:*:*",
+      "cpe:2.3:a:gitlab:gitlab:12.4:*:*:*:enterprise:*:*:*",
+      "cpe:2.3:a:gitlab:gitlab:13.5:*:*:*:*:*:*:*",
+      "cpe:2.3:a:gitlab:gitlab:13.5:*:*:*:enterprise:*:*:*",
+      "cpe:2.3:a:gitlab:gitlab:13.6:*:*:*:*:*:*:*",
+      "cpe:2.3:a:gitlab:gitlab:13.6:*:*:*:enterprise:*:*:*"
+    ],
+    "severity": "Medium"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://gitlab.com/gitlab-org/cves/-/blob/master/2020/CVE-2020-26407.json"
+    },
+    {
+      "type": "WEB",
+      "url": "https://gitlab.com/gitlab-org/gitlab/-/issues/212630"
+    },
+    {
+      "type": "WEB",
+      "url": "https://hackerone.com/reports/832117"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "gitlab",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/gitlab"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "13.4.7"
+            },
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "13.5.5"
+            },
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "13.6.2"
+            }
+          ]
+        },
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "12.4.0"
+            },
+            {
+              "last_affected": "12.4.0"
+            },
+            {
+              "introduced": "13.5.0"
+            },
+            {
+              "last_affected": "13.5.0"
+            },
+            {
+              "introduced": "13.6.0"
+            },
+            {
+              "last_affected": "13.6.0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/gitlab/BIT-gitlab-2020-26407.json"
+      },
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.6.0"
+}

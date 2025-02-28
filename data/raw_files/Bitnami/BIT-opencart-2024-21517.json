@@ -1,0 +1,55 @@
+{
+  "id": "BIT-opencart-2024-21517",
+  "details": "This affects versions of the package opencart/opencart from 4.0.0-0. A reflected XSS issue was identified in the redirect parameter of customer account/login route. An attacker can inject arbitrary HTML and Javascript into the page response. As this vulnerability is present in the account functionality it could be used to target and attack customers of the OpenCart shop.\r\r**Notes:**\r\r1) The fix for this vulnerability is incomplete",
+  "aliases": [
+    "CVE-2024-21517",
+    "GHSA-qc3q-8rr8-8p5v"
+  ],
+  "modified": "2024-11-27T19:40:48.342Z",
+  "published": "2024-06-25T11:58:07.173Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:opencart:opencart:*:*:*:*:*:*:*:*"
+    ],
+    "severity": "Medium"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://github.com/opencart/opencart/commit/0fd1ee4b6c94366bf3e5d3831a8336f3275d1860"
+    },
+    {
+      "type": "WEB",
+      "url": "https://security.snyk.io/vuln/SNYK-PHP-OPENCARTOPENCART-7266577"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "opencart",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/opencart"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "4.0.0-0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/opencart/BIT-opencart-2024-21517.json"
+      },
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:L/I:L/A:N"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.6.0"
+}

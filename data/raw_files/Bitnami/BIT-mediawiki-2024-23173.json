@@ -1,0 +1,69 @@
+{
+  "id": "BIT-mediawiki-2024-23173",
+  "details": "An issue was discovered in the Cargo extension in MediaWiki before 1.35.14, 1.36.x through 1.39.x before 1.39.6, and 1.40.x before 1.40.2. The Special:Drilldown page allows XSS via artist, album, and position parameters because of applied filter values in drilldown/CargoAppliedFilter.php.",
+  "aliases": [
+    "CVE-2024-23173"
+  ],
+  "modified": "2024-03-06T11:25:28.861Z",
+  "published": "2024-03-06T10:56:40.794Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:mediawiki:mediawiki:*:*:*:*:*:*:*:*"
+    ],
+    "severity": "Medium"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://gerrit.wikimedia.org/r/c/mediawiki/extensions/Cargo/+/965214"
+    },
+    {
+      "type": "WEB",
+      "url": "https://phabricator.wikimedia.org/T348687"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "mediawiki",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/mediawiki"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "1.35.14"
+            },
+            {
+              "introduced": "1.36.0"
+            },
+            {
+              "fixed": "1.39.6"
+            },
+            {
+              "introduced": "1.40.0"
+            },
+            {
+              "fixed": "1.40.2"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/mediawiki/BIT-mediawiki-2024-23173.json"
+      },
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.6.0"
+}

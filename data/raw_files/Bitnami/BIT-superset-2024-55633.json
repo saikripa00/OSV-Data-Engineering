@@ -1,0 +1,58 @@
+{
+  "id": "BIT-superset-2024-55633",
+  "details": "Improper Authorization vulnerability in Apache Superset. On Postgres analytic databases an attacker with SQLLab access can\u00a0craft a specially designed SQL DML statement\u00a0that is Incorrectly identified as a read-only query, enabling its execution. Non postgres analytics database connections and postgres analytics database connections set with a readonly user (advised) are not vulnerable.\u00a0This issue affects Apache Superset: before 4.1.0.Users are recommended to upgrade to version 4.1.0, which fixes the issue.",
+  "aliases": [
+    "CVE-2024-55633",
+    "GHSA-787v-v9vq-4rgv"
+  ],
+  "modified": "2025-02-12T07:43:48.785Z",
+  "published": "2025-02-05T07:24:52.298Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:apache:superset:*:*:*:*:*:python:*:*"
+    ],
+    "severity": "Medium"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://lists.apache.org/thread/bwmd17fcvljt9q4cgctp4v09zh3qs7fb"
+    },
+    {
+      "type": "WEB",
+      "url": "http://www.openwall.com/lists/oss-security/2024/12/12/1"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "superset",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/superset"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "4.1.0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/superset/BIT-superset-2024-55633.json"
+      },
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.6.0"
+}
