@@ -71,12 +71,12 @@ def process_osv_data():
          .option("mode", "PERMISSIVE") \
          .json(VALIDATED_DIR)
 
-    print(f"Loaded {df.count()} records from validated files.")
+    print(f"Loaded {df.count()} records from validated files.") #action words!!! alert remove jh
 
     # --------------------------
     # Create Vulnerabilities Table
     # --------------------------
-    vuln_df = df.select(
+    vuln_df = df.select( #-- optimize
         col("id").alias("vulnerability_id"),
         "summary",
         "details",
@@ -93,7 +93,7 @@ def process_osv_data():
     # --------------------------
     # Explode the "affected" array to extract package and version info.
     # For records missing the "package" field, the resulting package columns will be null.
-    affected_df = df.select("id", explode("affected").alias("affected_entry"))
+    affected_df = df.select("id", explode("affected").alias("affected_entry")) # alert 
     ranges_df = affected_df.withColumn("range", explode("affected_entry.ranges"))
     events_df = ranges_df.withColumn("event", explode("range.events"))
     fixed_df = events_df.select(
