@@ -1,0 +1,57 @@
+{
+  "id": "BIT-golang-2020-29510",
+  "details": "The encoding/xml package in Go versions 1.15 and earlier does not correctly preserve the semantics of directives during tokenization round-trips, which allows an attacker to craft inputs that behave in conflicting ways during different stages of processing in affected downstream applications.",
+  "aliases": [
+    "CVE-2020-29510"
+  ],
+  "modified": "2025-02-26T07:48:40.248Z",
+  "published": "2024-03-06T11:07:00.167Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:golang:go:*:*:*:*:*:*:*:*"
+    ],
+    "severity": "Medium"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://github.com/mattermost/xml-roundtrip-validator/blob/master/advisories/unstable-directives.md"
+    },
+    {
+      "type": "WEB",
+      "url": "https://security.netapp.com/advisory/ntap-20210129-0006/"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "golang",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/golang"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "1.15.0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/golang/BIT-golang-2020-29510.json"
+      },
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.6.0"
+}

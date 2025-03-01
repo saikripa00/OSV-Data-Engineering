@@ -1,0 +1,75 @@
+{
+  "id": "BIT-jenkins-2020-2105",
+  "details": "REST API endpoints in Jenkins LTS 2.204.1 and earlier were vulnerable to clickjacking attacks.",
+  "aliases": [
+    "CVE-2020-2105",
+    "GHSA-7xp8-7wqx-5hqx"
+  ],
+  "modified": "2025-02-26T16:37:33.026Z",
+  "published": "2024-03-06T11:06:09.571Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:jenkins:jenkins:*:*:*:*:lts:*:*:*",
+      "cpe:2.3:a:jenkins:jenkins:*:*:*:*:-:*:*:*"
+    ],
+    "severity": "Medium"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "http://www.openwall.com/lists/oss-security/2020/01/29/1"
+    },
+    {
+      "type": "WEB",
+      "url": "https://access.redhat.com/errata/RHBA-2020:0402"
+    },
+    {
+      "type": "WEB",
+      "url": "https://access.redhat.com/errata/RHBA-2020:0675"
+    },
+    {
+      "type": "WEB",
+      "url": "https://access.redhat.com/errata/RHSA-2020:0681"
+    },
+    {
+      "type": "WEB",
+      "url": "https://access.redhat.com/errata/RHSA-2020:0683"
+    },
+    {
+      "type": "WEB",
+      "url": "https://jenkins.io/security/advisory/2020-01-29/#SECURITY-1704"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "jenkins",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/jenkins"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "last_affected": "2.218.0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/jenkins/BIT-jenkins-2020-2105.json"
+      },
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.6.0"
+}

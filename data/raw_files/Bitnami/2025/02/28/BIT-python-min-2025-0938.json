@@ -1,0 +1,75 @@
+{
+  "id": "BIT-python-min-2025-0938",
+  "details": "The Python standard library functions `urllib.parse.urlsplit` and `urlparse` accepted domain names that included square brackets which isn't valid according to RFC 3986. Square brackets are only meant to be used as delimiters for specifying IPv6 and IPvFuture hosts in URLs. This could result in differential parsing across the Python URL parser and other specification-compliant URL parsers.",
+  "aliases": [
+    "BIT-python-2025-0938",
+    "CVE-2025-0938",
+    "PSF-2025-1"
+  ],
+  "modified": "2025-02-06T11:12:01.831566Z",
+  "published": "2025-02-06T07:20:18.791Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:python:python:*:*:*:*:*:*:*:*"
+    ],
+    "severity": "Unknown"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://github.com/python/cpython/commit/90e526ae67b172ed7c6c56e7edad36263b0f9403"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/python/cpython/commit/a7084f6075c9595ba60119ce8c62f1496f50c568"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/python/cpython/commit/d89a5f6a6e65511a5f6e0618c4c30a7aa5aba56a"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/python/cpython/issues/105704"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/python/cpython/pull/129418"
+    },
+    {
+      "type": "WEB",
+      "url": "https://mail.python.org/archives/list/security-announce@python.org/thread/K4EUG6EKV6JYFIC24BASYOZS4M5XOQIB/"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "python-min",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/python-min"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "0"
+            },
+            {
+              "fixed": "3.12.9"
+            },
+            {
+              "introduced": "3.13.0"
+            },
+            {
+              "fixed": "3.13.2"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/python-min/BIT-python-min-2025-0938.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

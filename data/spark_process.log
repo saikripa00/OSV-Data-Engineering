@@ -1,0 +1,86 @@
+ Starting OSV Data Processing for 2025/02/28
+ Loaded records from /mnt/c/Users/saikr/UW/projects/OSV-Data-Engineering/data/validated_files/*/2025/02/28
+ ERROR: A schema mismatch detected when writing to the Delta table (Table ID: 180effb7-dc33-47a1-b6cc-cc4db9e989ad).
+To enable schema migration using DataFrameWriter or DataStreamWriter, please set:
+'.option("mergeSchema", "true")'.
+For other operations, set the session configuration
+spark.databricks.delta.schema.autoMerge.enabled to "true". See the documentation
+specific to the operation for details.
+
+Table schema:
+root
+-- vulnerability_id: string (nullable = true)
+-- summary: string (nullable = true)
+-- details: string (nullable = true)
+-- aliases: array (nullable = true)
+    |-- element: string (containsNull = true)
+-- modified: string (nullable = true)
+-- published: string (nullable = true)
+-- schema_version: string (nullable = true)
+
+
+Data schema:
+root
+-- vulnerability_id: string (nullable = true)
+-- summary: string (nullable = true)
+-- details: string (nullable = true)
+-- aliases: array (nullable = true)
+    |-- element: string (containsNull = true)
+-- modified: string (nullable = true)
+-- published: string (nullable = true)
+-- schema_version: string (nullable = true)
+-- date: string (nullable = true)
+
+         
+Partition columns do not match the partition columns of the table.
+Given: [`date`]
+Table: []
+         
+ Starting OSV Data Processing for 2025/02/28
+ Loaded records from /mnt/c/Users/saikr/UW/projects/OSV-Data-Engineering/data/validated_files/*/2025/02/28
+ ERROR: A schema mismatch detected when writing to the Delta table (Table ID: 180effb7-dc33-47a1-b6cc-cc4db9e989ad).
+To enable schema migration using DataFrameWriter or DataStreamWriter, please set:
+'.option("mergeSchema", "true")'.
+For other operations, set the session configuration
+spark.databricks.delta.schema.autoMerge.enabled to "true". See the documentation
+specific to the operation for details.
+
+Table schema:
+root
+-- vulnerability_id: string (nullable = true)
+-- summary: string (nullable = true)
+-- details: string (nullable = true)
+-- aliases: array (nullable = true)
+    |-- element: string (containsNull = true)
+-- modified: string (nullable = true)
+-- published: string (nullable = true)
+-- schema_version: string (nullable = true)
+
+
+Data schema:
+root
+-- vulnerability_id: string (nullable = true)
+-- summary: string (nullable = true)
+-- details: string (nullable = true)
+-- aliases: array (nullable = true)
+    |-- element: string (containsNull = true)
+-- modified: string (nullable = true)
+-- published: string (nullable = true)
+-- schema_version: string (nullable = true)
+-- date: string (nullable = true)
+
+         
+Partition columns do not match the partition columns of the table.
+Given: [`date`]
+Table: []
+         
+ Starting OSV Data Processing for 2025/02/28
+ Loaded records from /mnt/c/Users/saikr/UW/projects/OSV-Data-Engineering/data/validated_files/*/2025/02/28
+ Wrote vulnerabilities Delta table at /mnt/c/Users/saikr/UW/projects/OSV-Data-Engineering/data/delta_tables/vulnerabilities, partition: 2025-02-28
+ Wrote fixed_versions Delta table at /mnt/c/Users/saikr/UW/projects/OSV-Data-Engineering/data/delta_tables/fixed_versions, partition: 2025-02-28
+ OSV Data Processing Completed Successfully.
+ Starting OSV Data Processing for 2025/02/28
+ Loaded 3264297 records from /mnt/c/Users/saikr/UW/projects/OSV-Data-Engineering/data/validated_files/*/2025/02/28
+ Wrote vulnerabilities Delta table at /mnt/c/Users/saikr/UW/projects/OSV-Data-Engineering/data/delta_tables/vulnerabilities, partition: 2025/02/28
+ Wrote fixed_versions Delta table at /mnt/c/Users/saikr/UW/projects/OSV-Data-Engineering/data/delta_tables/fixed_versions, partition: 2025/02/28
+ OSV Data Processing Completed Successfully.

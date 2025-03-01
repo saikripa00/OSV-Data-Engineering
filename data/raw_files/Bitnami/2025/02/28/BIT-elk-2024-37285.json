@@ -1,0 +1,51 @@
+{
+  "id": "BIT-elk-2024-37285",
+  "details": "A deserialization issue in Kibana can lead to arbitrary code execution when Kibana attempts to parse a YAML document containing a crafted payload. A successful attack requires a malicious user to have a combination of both specific  Elasticsearch indices privileges https://www.elastic.co/guide/en/elasticsearch/reference/current/defining-roles.html#roles-indices-priv \u00a0and  Kibana privileges https://www.elastic.co/guide/en/fleet/current/fleet-roles-and-privileges.html \u00a0assigned to them.The following Elasticsearch indices permissions are required  *  write\u00a0privilege on the system indices .kibana_ingest*  *  The allow_restricted_indices\u00a0flag is set to trueAny of the following Kibana privileges are additionally required  *  Under Fleet\u00a0the All\u00a0privilege is granted  *  Under Integration\u00a0the Read\u00a0or All\u00a0privilege is granted  *  Access to the fleet-setup\u00a0privilege is gained through the Fleet Server\u2019s service account token",
+  "aliases": [
+    "BIT-kibana-2024-37285",
+    "CVE-2024-37285"
+  ],
+  "modified": "2025-02-26T16:37:33.026Z",
+  "published": "2024-11-16T07:08:55.088Z",
+  "database_specific": {
+    "cpes": [
+      "cpe:2.3:a:elasticsearch:kibana:*:*:*:*:*:node.js:*:*"
+    ],
+    "severity": "Critical"
+  },
+  "references": [
+    {
+      "type": "WEB",
+      "url": "https://discuss.elastic.co/t/kibana-8-15-1-security-update-esa-2024-27-esa-2024-28/366119"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "elk",
+        "ecosystem": "Bitnami",
+        "purl": "pkg:bitnami/elk"
+      },
+      "ranges": [
+        {
+          "type": "SEMVER",
+          "events": [
+            {
+              "introduced": "8.10.0"
+            }
+          ]
+        }
+      ],
+      "database_specific": {
+        "source": "https://github.com/bitnami/vulndb/tree/main/data/elk/BIT-elk-2024-37285.json"
+      },
+      "severity": [
+        {
+          "type": "CVSS_V3",
+          "score": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:H/I:H/A:H"
+        }
+      ]
+    }
+  ],
+  "schema_version": "1.6.0"
+}
