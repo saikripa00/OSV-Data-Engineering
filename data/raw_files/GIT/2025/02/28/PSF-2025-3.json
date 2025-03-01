@@ -1,52 +1,42 @@
 {
-  "id": "PSF-2025-1",
-  "details": "The Python standard library functions `urllib.parse.urlsplit` and `urlparse` accepted domain names that included square brackets which isn't valid according to RFC 3986. Square brackets are only meant to be used as delimiters for specifying IPv6 and IPvFuture hosts in URLs. This could result in differential parsing across the Python URL parser and other specification-compliant URL parsers.",
+  "id": "PSF-2025-3",
+  "details": "During an address list folding when a separating comma ends up on a folded line and that line is to be unicode-encoded then the separator itself is also unicode-encoded. Expected behavior is that the separating comma remains a plan comma. This can result in the address header being misinterpreted by some mail servers.",
   "aliases": [
-    "BIT-python-2025-0938",
-    "BIT-python-min-2025-0938",
-    "CVE-2025-0938"
+    "CVE-2025-1795"
   ],
-  "modified": "2025-03-01T03:10:12.463503Z",
-  "published": "2025-01-31T17:51:35.898Z",
+  "modified": "2025-03-01T03:12:06.365619Z",
+  "published": "2025-02-28T18:59:31Z",
   "database_specific": {
     "cwe_ids": []
   },
   "references": [
     {
       "type": "REPORT",
-      "url": "https://github.com/python/cpython/issues/105704"
+      "url": "https://github.com/python/cpython/issues/100884"
     },
     {
       "type": "WEB",
-      "url": "https://github.com/python/cpython/pull/129418"
+      "url": "https://github.com/python/cpython/pull/100885"
+    },
+    {
+      "type": "WEB",
+      "url": "https://github.com/python/cpython/pull/119099"
+    },
+    {
+      "type": "FIX",
+      "url": "https://github.com/python/cpython/commit/09fab93c3d857496c0bd162797fab816c311ee48"
+    },
+    {
+      "type": "FIX",
+      "url": "https://github.com/python/cpython/commit/70754d21c288535e86070ca7a6e90dcb670b8593"
+    },
+    {
+      "type": "FIX",
+      "url": "https://github.com/python/cpython/commit/9148b77e0af91cdacaa7fe3dfac09635c3fe9a74"
     },
     {
       "type": "ADVISORY",
-      "url": "https://mail.python.org/archives/list/security-announce@python.org/thread/K4EUG6EKV6JYFIC24BASYOZS4M5XOQIB/"
-    },
-    {
-      "type": "FIX",
-      "url": "https://github.com/python/cpython/commit/d89a5f6a6e65511a5f6e0618c4c30a7aa5aba56a"
-    },
-    {
-      "type": "FIX",
-      "url": "https://github.com/python/cpython/commit/90e526ae67b172ed7c6c56e7edad36263b0f9403"
-    },
-    {
-      "type": "FIX",
-      "url": "https://github.com/python/cpython/commit/a7084f6075c9595ba60119ce8c62f1496f50c568"
-    },
-    {
-      "type": "FIX",
-      "url": "https://github.com/python/cpython/commit/526617ed68cde460236c973e5d0a8bad4de896ba"
-    },
-    {
-      "type": "FIX",
-      "url": "https://github.com/python/cpython/commit/b8b4b713c5f8ec0958c7ef8d29d6711889bc94ab"
-    },
-    {
-      "type": "FIX",
-      "url": "https://github.com/python/cpython/commit/ff4e5c25666f63544071a6b075ae8b25c98b7a32"
+      "url": "https://mail.python.org/archives/list/security-announce@python.org/thread/MB62IZMEC3UM6SGHP5LET5JX2Y7H4ZUR/"
     }
   ],
   "affected": [
@@ -60,22 +50,13 @@
               "introduced": "0"
             },
             {
-              "fixed": "d89a5f6a6e65511a5f6e0618c4c30a7aa5aba56a"
+              "fixed": "09fab93c3d857496c0bd162797fab816c311ee48"
             },
             {
-              "fixed": "90e526ae67b172ed7c6c56e7edad36263b0f9403"
+              "fixed": "70754d21c288535e86070ca7a6e90dcb670b8593"
             },
             {
-              "fixed": "a7084f6075c9595ba60119ce8c62f1496f50c568"
-            },
-            {
-              "fixed": "526617ed68cde460236c973e5d0a8bad4de896ba"
-            },
-            {
-              "fixed": "b8b4b713c5f8ec0958c7ef8d29d6711889bc94ab"
-            },
-            {
-              "fixed": "ff4e5c25666f63544071a6b075ae8b25c98b7a32"
+              "fixed": "9148b77e0af91cdacaa7fe3dfac09635c3fe9a74"
             }
           ]
         }
@@ -225,7 +206,6 @@
         "v3.1.5",
         "v3.1.5rc1",
         "v3.1.5rc2",
-        "v3.10.0",
         "v3.10.0a1",
         "v3.10.0a2",
         "v3.10.0a3",
@@ -233,28 +213,6 @@
         "v3.10.0a5",
         "v3.10.0a6",
         "v3.10.0a7",
-        "v3.10.0b1",
-        "v3.10.0b2",
-        "v3.10.0b3",
-        "v3.10.0b4",
-        "v3.10.0rc1",
-        "v3.10.0rc2",
-        "v3.10.1",
-        "v3.10.10",
-        "v3.10.11",
-        "v3.10.12",
-        "v3.10.13",
-        "v3.10.14",
-        "v3.10.15",
-        "v3.10.16",
-        "v3.10.2",
-        "v3.10.3",
-        "v3.10.4",
-        "v3.10.5",
-        "v3.10.6",
-        "v3.10.7",
-        "v3.10.8",
-        "v3.10.9",
         "v3.11.0",
         "v3.11.0a1",
         "v3.11.0a2",
@@ -271,8 +229,6 @@
         "v3.11.0rc1",
         "v3.11.0rc2",
         "v3.11.1",
-        "v3.11.10",
-        "v3.11.11",
         "v3.11.2",
         "v3.11.3",
         "v3.11.4",
@@ -280,7 +236,6 @@
         "v3.11.6",
         "v3.11.7",
         "v3.11.8",
-        "v3.11.9",
         "v3.12.0",
         "v3.12.0a1",
         "v3.12.0a2",
@@ -298,31 +253,10 @@
         "v3.12.0rc3",
         "v3.12.1",
         "v3.12.2",
-        "v3.12.3",
-        "v3.12.4",
-        "v3.12.5",
-        "v3.12.6",
-        "v3.12.7",
-        "v3.12.8",
-        "v3.13.0",
         "v3.13.0a1",
         "v3.13.0a2",
         "v3.13.0a3",
         "v3.13.0a4",
-        "v3.13.0a5",
-        "v3.13.0a6",
-        "v3.13.0b1",
-        "v3.13.0b2",
-        "v3.13.0b3",
-        "v3.13.0b4",
-        "v3.13.0rc1",
-        "v3.13.0rc2",
-        "v3.13.0rc3",
-        "v3.13.1",
-        "v3.14.0a1",
-        "v3.14.0a2",
-        "v3.14.0a3",
-        "v3.14.0a4",
         "v3.1a1",
         "v3.1a2",
         "v3.1b1",
@@ -437,46 +371,15 @@
         "v3.8.0a3",
         "v3.8.0a4",
         "v3.8.0b1",
-        "v3.9.0",
         "v3.9.0a1",
         "v3.9.0a2",
         "v3.9.0a3",
         "v3.9.0a4",
         "v3.9.0a5",
-        "v3.9.0a6",
-        "v3.9.0b1",
-        "v3.9.0b2",
-        "v3.9.0b3",
-        "v3.9.0b4",
-        "v3.9.0b5",
-        "v3.9.0rc1",
-        "v3.9.0rc2",
-        "v3.9.1",
-        "v3.9.10",
-        "v3.9.11",
-        "v3.9.12",
-        "v3.9.13",
-        "v3.9.14",
-        "v3.9.15",
-        "v3.9.16",
-        "v3.9.17",
-        "v3.9.18",
-        "v3.9.19",
-        "v3.9.1rc1",
-        "v3.9.2",
-        "v3.9.20",
-        "v3.9.21",
-        "v3.9.2rc1",
-        "v3.9.3",
-        "v3.9.4",
-        "v3.9.5",
-        "v3.9.6",
-        "v3.9.7",
-        "v3.9.8",
-        "v3.9.9"
+        "v3.9.0a6"
       ],
       "database_specific": {
-        "source": "https://github.com/psf/advisory-database/blob/main/advisories/python/PSF-2025-1.json"
+        "source": "https://github.com/psf/advisory-database/blob/main/advisories/python/PSF-2025-3.json"
       }
     }
   ],
