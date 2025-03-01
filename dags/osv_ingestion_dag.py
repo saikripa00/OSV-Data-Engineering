@@ -91,7 +91,7 @@ def file_exists(bucket, blob_name):
     return any(blob.name == blob_name for blob in bucket.list_blobs())
 
 def filter_and_move_json():
-    """Filter JSON files and move to partitioned intermediate directory."""
+    """Filter JSON files based on 'modified' field and move to partitioned intermediate directory."""
     for ecosystem in OSV_SOURCES.keys():
         raw_folder = os.path.join(RAW_DIR, ecosystem, year, month, day)
         partitioned_folder = os.path.join(INTERMEDIATE_DIR, ecosystem, year, month, day)
@@ -102,9 +102,21 @@ def filter_and_move_json():
 
         for file in os.listdir(raw_folder):
             if file.endswith(".json"):
-                shutil.copy(os.path.join(raw_folder, file), os.path.join(partitioned_folder, file))
-                logging.info(f"Copied {file} to {partitioned_folder}")
+                file_path = os.path.join(raw_folder, file)
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        data = json.load(f)
 
+                    modified_date = data.get("modified", "").split("T")[0]
+                    if modified_date == YESTERDAY:
+                        shutil.copy(file_path, os.path.join(partitioned_folder, file))
+                        logging.info(f"Copied {file} to {partitioned_folder}")
+                    else:
+                        logging.info(f"Skipped {file} because modified date {modified_date} is not {YESTERDAY}")
+                except json.JSONDecodeError:
+                    logging.error(f"Invalid JSON file: {file_path}")
+                except Exception as e:
+                    logging.error(f"Error processing {file}: {e}")
 
 def validate_json_files():
     """Validate JSON files and move valid ones to validated directory."""
